@@ -36,7 +36,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
         children: [
           BottomNavBarItem(
             icon: IconlyLight.chat,
-            color: Colors.red,
             index: 0,
             activeIndex: activeIndex,
             function: changeActiveIndex,
@@ -44,7 +43,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           const SizedBox(width: 30,),
           BottomNavBarItem(
             icon: IconlyLight.camera,
-            color: Colors.green,
             index: 1,
             activeIndex: activeIndex,
             function: changeActiveIndex,
@@ -52,7 +50,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           const SizedBox(width: 30,),
           BottomNavBarItem(
             icon: IconlyLight.setting,
-            color: Colors.orange,
             index: 2,
             activeIndex: activeIndex,
             function: changeActiveIndex,

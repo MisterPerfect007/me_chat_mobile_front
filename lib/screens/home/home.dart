@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:me_chat/screens/home/home_widget/connected_friends.dart';
 
 import 'package:me_chat/widget/bottomNavBar/bottom_nav_bar.dart';
+import 'package:me_chat/widget/friendAvatar/friend_avatar.dart';
 
+import 'home_widget/messages_list_item.dart';
 import 'home_widget/search_input.dart';
 
 class Home extends StatelessWidget {
@@ -13,57 +16,74 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavBar(),
-        body: Container(
-          padding: EdgeInsets.only(top: 50, left: 30, right: 30),
-          child: Column(children: [
-            Row(children: [
-              const Text(
-                'Messages',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              Expanded(
-                child: Container(),
-              ),
-              const Icon(
-                IconlyLight.editSquare,
-                color: Color(0xff00bc48),
-                size: 30,
-              )
-            ]),
-            const SizedBox(
-              height: 20,
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Row(children: [
+            const Text(
+              'Messages',
+              style: TextStyle(
+                fontSize: 25, 
+                fontWeight: FontWeight.w700),
             ),
+            Expanded(
+              child: Container(),
+            ),
+            const Icon(
+              IconlyLight.editSquare,
+              color: Color(0xff00bc48),
+              size: 30,
+            )
+          ]),
+        ),
+        bottomNavigationBar: const BottomNavBar(),
+        body: Container(
+          padding: const EdgeInsets.only(top: 5, left: 15, right: 15),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const SearchInput(),
             const SizedBox(
-              height: 30,
-            ),
-            const ConnectedFriends(),
-            const SizedBox(
               height: 20,
             ),
-            Container(
-              // decoration: BoxDecoration(
-              //   border: Border.all()
-              // ),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Messages',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+            
+            Expanded(
+              child: SingleChildScrollView(
+                // clipBehavior: Clip.hardEdge,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    ConnectedFriends(),
+                    SizedBox(
+                      height: 20,
                     ),
-                  ),
-                  SingleChildScrollView(
-                    child: Column()
-                  )
-                ],
+                    Text(
+                      'Messages',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    MessagesListItem(),
+                    SizedBox(height: 30,),
+                    MessagesListItem(),
+                    SizedBox(height: 30,),
+                    MessagesListItem(), 
+                    SizedBox(height: 30,),
+                    MessagesListItem(),
+                    SizedBox(height: 30,),
+                    MessagesListItem(),
+                    SizedBox(height: 30,),
+
+                  ],
+                ),
               ),
-            )
+            ),
           ]),
         ));
   }
 }
+

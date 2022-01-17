@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:me_chat/widget/friendAvatar/friend_avatar.dart';
+import 'package:me_chat/widget/friendName/friend_name.dart';
 
 class ConnectedFriend extends StatelessWidget {
   const ConnectedFriend({Key? key}) : super(key: key);
@@ -9,13 +10,10 @@ class ConnectedFriend extends StatelessWidget {
     return Column(
       children: const [
         FriendAvatar(),
-        Text(
-          'Name',
-          style: TextStyle(
-            fontWeight: FontWeight.w600
-          ),
-        )
+        SizedBox(height: 10,),
+        FriendName()
       ],
     );
   }
 }
+

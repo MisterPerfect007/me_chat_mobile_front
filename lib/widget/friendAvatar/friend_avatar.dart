@@ -12,8 +12,8 @@ class FriendAvatar extends StatelessWidget {
         border: Border.all(color: Color(0xff00bc48), width: 2),
       ),
       child: Container(
-        height: 65,
-        width: 65,
+        height: 55,
+        width: 55,
         decoration: const BoxDecoration(
             color: Colors.teal,
             borderRadius: BorderRadius.all(Radius.circular(100)),

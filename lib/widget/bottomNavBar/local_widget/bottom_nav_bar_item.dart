@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class BottomNavBarItem extends StatefulWidget {
   final IconData icon;
-  final Color color;
   final Function function;
   final int index;
   final int activeIndex;
@@ -10,7 +9,6 @@ class BottomNavBarItem extends StatefulWidget {
   const BottomNavBarItem(
       {Key? key,
       required this.icon,
-      required this.color,
       required this.function,
       required this.index,
       required this.activeIndex,
