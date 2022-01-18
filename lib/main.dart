@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me_chat/screens/chatting/chatting.dart';
 import 'package:me_chat/screens/home/home.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: Chatting(),
     );
   }
 }

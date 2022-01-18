@@ -23,9 +23,7 @@ class Home extends StatelessWidget {
           title: Row(children: [
             const Text(
               'Messages',
-              style: TextStyle(
-                fontSize: 25, 
-                fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
             ),
             Expanded(
               child: Container(),
@@ -46,7 +44,6 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            
             Expanded(
               child: SingleChildScrollView(
                 // clipBehavior: Clip.hardEdge,
@@ -68,16 +65,25 @@ class Home extends StatelessWidget {
                       height: 10,
                     ),
                     MessagesListItem(),
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
                     MessagesListItem(),
-                    SizedBox(height: 30,),
-                    MessagesListItem(), 
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
                     MessagesListItem(),
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
                     MessagesListItem(),
-                    SizedBox(height: 30,),
-
+                    SizedBox(
+                      height: 30,
+                    ),
+                    MessagesListItem(),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),
@@ -86,4 +92,3 @@ class Home extends StatelessWidget {
         ));
   }
 }
-

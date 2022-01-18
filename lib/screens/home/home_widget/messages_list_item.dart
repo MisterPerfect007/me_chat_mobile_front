@@ -39,8 +39,8 @@ class MessagesListItem extends StatelessWidget {
                 const Text(
                   'Hi Mark ! Hope you\'re doing well\nHow about our meeting ?',
                   style: TextStyle(
-                    color: Color(0xff00bc48),
-                    // color: Colors.grey.shade700,
+                    // color: Color(0xff00bc48),
+                    color: Colors.grey,
                     fontWeight: FontWeight.w400,
                     fontSize: 13,
                   ),
