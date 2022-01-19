@@ -13,21 +13,17 @@ class Chatting extends StatelessWidget {
   Chatting({Key? key}) : super(key: key);
   final ScrollController _scrollController = ScrollController();
   bool _needToScrollDown = true;
-  
-   
-  void _scrollToBottom() async{
-    _scrollController.animateTo(
-      _scrollController.position.maxScrollExtent,
-      duration: Duration(milliseconds: 500),
-      curve: Curves.easeInOut);
-  } 
+
+  void _scrollToBottom() async {
+    _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+        duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+  }
+
   @override
   Widget build(BuildContext context) {
-    
-    if(_needToScrollDown) {
-      WidgetsBinding.instance?.addPostFrameCallback(
-        (timeStamp) => _scrollToBottom()
-      );
+    if (_needToScrollDown) {
+      WidgetsBinding.instance
+          ?.addPostFrameCallback((timeStamp) => _scrollToBottom());
       _needToScrollDown = false;
     }
 
@@ -36,19 +32,20 @@ class Chatting extends StatelessWidget {
         backgroundColor: Colors.grey[400],
         appBar: PreferredSize(
           child: CustomAppBar(),
-          preferredSize: Size.fromHeight(screenHeight / 9),
+          preferredSize: Size.fromHeight(80),
         ),
         body: Container(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30), topRight: Radius.circular(30)),
-            color: Colors.white,
-          ),
-          // height: screenHeight,
-          child: SafeArea(
-              child: Container(
-                height: screenHeight,
+            padding: EdgeInsets.only(left: 15, right: 15, top: 15),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+              color: Colors.white,
+            ),
+            // height: screenHeight,
+            child: SafeArea(
+                child: Stack(children: [
+              Container(
+                height: screenHeight - 80,
                 child: NotificationListener<OverscrollIndicatorNotification>(
                   onNotification: (overscroll) {
                     overscroll.disallowIndicator();
@@ -56,8 +53,7 @@ class Chatting extends StatelessWidget {
                   },
                   child: SingleChildScrollView(
                     child: Container(
-                      // padding: EdgeInsets.only(bottom: 5),
-                      height: screenHeight * 7.6 / 9,
+                      height: screenHeight - 123,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -78,7 +74,7 @@ class Chatting extends StatelessWidget {
                                         // color: Colors.green.shade300,
                                         child: Column(
                                           children: [
-                                            Text('data'),
+                                            Text('databb'),
                                             SizedBox(
                                               height: 500,
                                             ),
@@ -101,7 +97,7 @@ class Chatting extends StatelessWidget {
                           ),
                           Container(
                             width: MediaQuery.of(context).size.width,
-                            padding: EdgeInsets.only(bottom: 5),
+                            padding: EdgeInsets.only(top: 15, bottom: 5),
                             child: MsgSendingInput(),
                           ),
                         ],
@@ -109,8 +105,21 @@ class Chatting extends StatelessWidget {
                     ),
                   ),
                 ),
-              )),
-        )     
-        );
+              ),
+              Container(
+                height: 75,
+                decoration:  BoxDecoration(
+                  
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.white,
+                      Colors.white.withOpacity(0.05),
+                    ]
+                  )
+                ),
+              ),
+            ]))));
   }
 }

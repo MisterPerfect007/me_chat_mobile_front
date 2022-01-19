@@ -11,6 +11,7 @@ class MsgSendingInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: [
         Expanded(
@@ -20,7 +21,9 @@ class MsgSendingInput extends StatelessWidget {
               left: 20,
               right: 15,
             ),
-            margin: const EdgeInsets.only(top: 5,),
+            // margin: const EdgeInsets.only(
+            //   top: 20,
+            // ),
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(25)),
                 color: Color.fromRGBO(223, 223, 223, 1)),
