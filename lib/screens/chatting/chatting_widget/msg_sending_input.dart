@@ -12,7 +12,22 @@ class MsgSendingInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.only(top: 5, bottom: 5),
+      padding: EdgeInsets.only(
+        top: 5, 
+        bottom: 5,
+        left: 15,
+        right: 15
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              offset: Offset(0, -1),
+              blurRadius: 1
+            )
+          ]
+        ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
@@ -29,7 +44,7 @@ class MsgSendingInput extends StatelessWidget {
               // ),
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(25)),
-                  color: Color.fromRGBO(223, 223, 223, 1)),
+                  color: Color.fromRGBO(223, 223, 223, 0.5)),
               child: const TextField(
                 maxLines: 3,
                 minLines: 1,
@@ -41,6 +56,7 @@ class MsgSendingInput extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
+          //Sending Icon
           Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(

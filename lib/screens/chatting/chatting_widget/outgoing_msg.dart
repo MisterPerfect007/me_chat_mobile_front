@@ -17,23 +17,36 @@ class OutgoingMsg extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-                color: Color(0xffb1edff),
+            decoration: BoxDecoration(
+                // color: Color(0xffc2f8ff),
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xffd8fbff),
+                    Color(0xffffffff),
+                  ]
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade600,
+                    offset: Offset(0, 0),
+                    blurRadius: 1
+                  )
+                ],
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
+                  bottomRight: Radius.circular(20),
                   bottomLeft: Radius.circular(10),
                 )),
             child: Row(
               // mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
-              children: const [
+              children: [
                 Text(
                   'Salut Hervé !',
                   style: TextStyle(
-                    color: Colors.black87,
+                    color: Colors.grey.shade800,
                     fontWeight: FontWeight.w600,
-                    // fontSize: 12
+                    fontSize: 13
                   ),
                   
                 ),
